@@ -1,0 +1,67 @@
+{% extends "soil/base.html" %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/fertiliser.css' %}">
+<div class="container">
+    <div class="card">
+        <div class="card-image">
+            <h2 class="card-heading">
+                Fertilisers
+                <small>Get advice on Fertilizer to use based on the soil</small>
+            </h2>
+        </div>
+        <form action="{% url 'fertiliser' %}" class="card-form" method="post">
+            {% csrf_token %}
+            <div class="input">
+                <input type="number" class="input-field" value="50" name="Nitrogen" required/>
+                <label for="nitrogen" class="input-label">Nitrogen</label>
+            </div>
+            <div class="input">
+                <input type="number" class="input-field" value="50" name="Phosphorous" required/>
+                <label for="phosphorous" class="input-label">Phosphorous</label>
+            </div>
+            <div class="input">
+                <input type="number" class="input-field" value="50" name="Potassium" required/>
+                <label for="potassium" class="input-label">Potassium</label>
+            </div>
+            <div class="input">
+                <input type="number" class="input-field" value="7" name="pH_Level" required/>
+                <label for="ph-level" class="input-label">pH Level</label>
+            </div>
+            <div class="input">
+                <input type="number" class="input-field" value="50" name="Soil_Moisture" required/>
+                <label for="soil-moisture" class="input-label">Soil Moisture</label>
+            </div>
+            <div class="input">
+                <label for="crop" class="crop">Crop to Grow</label>
+                <select id="crop-to-grow" class="crop-select" name="Crop_Name" required>
+                <option selected>Select Crop</option>
+                <option>Rice</option>
+                <option>Maize</option>
+                <option>Chickpea</option>
+                <option>Kidneybeans</option>
+                <option>Pigeonpeas</option>
+                <option>Mothbeans</option>
+                <option>Mungbean</option>
+                <option>Blackgram</option>
+                <option>Lentil</option>
+                <option>Pomegranate</option>
+                <option>Banana</option>
+                <option>Mango</option>
+                <option>Grapes</option>
+                <option>Watermelon</option>
+                <option>Muskmelon</option>
+                <option>Apple</option>
+                <option>Orange</option>
+                <option>Papaya</option>
+                <option>Coconut</option>
+                <option>Cotton</option>
+                <option>Jute</option>
+                <option>Coffee</option>
+                </select>
+            </div>
+            <div class="action">
+                <button class="action-button">Predict</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

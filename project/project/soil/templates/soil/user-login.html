@@ -1,0 +1,31 @@
+{% extends "soil/base.html" %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/user-login.css' %}">
+<!-- <div class="space"></div> -->
+<div class="login-container">
+    <div class="bg">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form action="/user/" method="post">
+        {% csrf_token %}
+        <div class="user_login">
+            <h3>User Login</h3>
+        </div>
+        <div class="headings"><label for="username">Username</label></div>
+        <div class="entries"><input type="text" placeholder="Username" name="username"></div>
+        <div class="headings"><label for="password">Password</label></div>
+        <div class="entries"><input type="password" placeholder="Password" name="password"></div>
+        <div class="login"><button>Sign In</button></div>
+        <div class="social">
+            <div class="signup"><a href="{% url 'register' %}" target="_blank">Sign Up</a></div>
+        </div>
+</div>
+</form>
+<div class="warning-message">
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+</div>
+</div>
+
+{% endblock content %}

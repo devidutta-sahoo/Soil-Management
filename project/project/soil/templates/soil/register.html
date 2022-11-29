@@ -1,0 +1,54 @@
+{% extends "soil/base.html" %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}" />
+<div class="container">
+    <h2>Registration Form</h2>
+    <div class="form-container">
+        <form action="/register/" method="post">
+            {% csrf_token %}
+            <div class="input-name">
+                <i class="fa fa-user lock"></i>
+                <input type="text" placeholder="First Name" required class="name" name="first_name" />
+                <span>
+          <i class="fa fa-user lock"></i>
+          <input
+            type="text"
+            placeholder="Last Name"
+            required
+            class="name"
+            name="last_name"
+          />
+        </span>
+            </div>
+            <div class="input-name">
+                <i class="fa fa-envelope email"></i>
+                <input type="email" placeholder="Email ID" required class="text-name" name="email" />
+            </div>
+            <div class="input-name">
+                <i class="fa fa-user lock"></i>
+                <input type="text" placeholder="Username" required class="text-name" name="username" />
+            </div>
+            <div class="input-name">
+                <i class="fa fa-lock lock"></i>
+                <input type="password" placeholder="Password" required class="text-name" name="password1" />
+            </div>
+            <div class="input-name">
+                <i class="fa fa-lock lock"></i>
+                <input type="password" placeholder="Confirm Password" required class="text-name" name="password2" />
+            </div>
+            <div class="input-name">
+                <input type="checkbox" id="cbutton" class="check-button" />
+                <label for="cbutton" class="check">Accept the Terms & Conditions</label>
+            </div>
+            <div class="input-name">
+                <button type="submit" class="button">Register</button>
+            </div>
+        </form>
+    </div>
+    <div class="warning-message">
+        {% for message in messages %}
+        <p>{{message}}</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

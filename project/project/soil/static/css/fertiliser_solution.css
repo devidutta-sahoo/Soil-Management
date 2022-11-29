@@ -1,0 +1,38 @@
+body {
+    background: lavender;
+}
+
+.container {
+    background: white;
+    margin-top: 2rem;
+    border-top: 10px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    padding: 10px;
+}
+
+.heading {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 27px;
+}
+
+.warning-message {
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: cursive;
+    line-height: 2rem;
+    padding: 0px 20px;
+}
+
+.warning-message p {
+    margin: 20px;
+}
+
+@media(max-width: 480px) {
+    .container {
+        width: 100%;
+        border: 2px solid blue;
+        padding: 5px;
+    }
+}

@@ -1,0 +1,14 @@
+{% extends "soil/base.html" %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/fertiliser_solution.css' %}">
+<div class="container">
+    <div class="heading">
+        <h2>Fertilisers</h2>
+    </div>
+    <div class="warning-message">
+        </ul>
+        <!-- {% for message in messages %} -->
+        <p>{{message}}</p>
+        <!-- {% endfor %} -->
+    </div>
+</div>
+{% endblock content %}

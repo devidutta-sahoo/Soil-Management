@@ -1,0 +1,50 @@
+{% extends "soil/base.html" %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/crop.css' %}">
+<!-- <div class="container"> -->
+<div class="card">
+    <div class="card-image">
+        <h2 class="card-heading">
+            Crops
+            <small>Find out the most suitable crop to grow in your farm</small>
+        </h2>
+    </div>
+    <form action="{% url 'crop' %}" class="card-form" method="post">
+        {% csrf_token %}
+        <div class="input">
+            <input type="number" class="input-field" value="50" name="Nitrogen" required/>
+            <label for="nitrogen" class="input-label">Nitrogen</label>
+        </div>
+        <div class="input">
+            <input type="number" class="input-field" value="50" name="Phosphorous" required/>
+            <label for="phosphorous" class="input-label">Phosphorous</label>
+        </div>
+        <div class="input">
+            <input type="number" class="input-field" value="50" name="Potassium" required/>
+            <label for="Potassium" class="input-label">Potassium</label>
+        </div>
+        <div class="input">
+            <input type="number" class="input-field" value="23" name="Temperature" required/>
+            <label for="temperature" class="input-label">Temperature</label>
+        </div>
+        <div class="input">
+            <input type="number" class="input-field" value="50" name="Humidity" required/>
+            <label for="humidity" class="input-label">Humidity</label>
+        </div>
+        <div class="input">
+            <input type="number" class="input-field" value="7" name="pH_Level" required/>
+            <label for="ph-level" class="input-label">pH Level</label>
+        </div>
+        <div class="input">
+            <input type="number" class="input-field" value="120" name="Rainfall" required/>
+            <label for="rainfall" class="input-label">Rainfall (in mm)</label>
+        </div>
+        <div class="action">
+            <button class="action-button">Predict</button>
+        </div>
+    </form>
+    <div class="card-info">
+        <p>We will predict the value as soon as possible</p>
+    </div>
+</div>
+<!-- </div> -->
+{% endblock content %}

@@ -1,0 +1,120 @@
+{% extends "soil/base.html" %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+
+<div class="bgimg-1">
+    <div class="caption">
+        <span class="border">SOIL MANAGEMENT</span>
+    </div>
+</div>
+
+<div style="
+    color: #777;
+    background-color: white;
+    text-align: center;
+    padding: 50px 80px;
+    text-align: justify;
+  ">
+    <h3 style="text-align: center">Introduction</h3>
+    <p>
+        The soil; A primary resource for food production and the most important tool for every farmer. Successful farming depends on the quality of soil, which provides water and essential nutrients to crops. Rich and healthy soil, combined with the appropriate
+        amount of water and sunlight can significantly contribute to a successful farming season and meeting yield quotas. <br /> Proper soil management protects and enhances soil performance. It also reduces input costs, prevents pollution, and
+        improves crop quality. Before planting, the soil should be in the best physical condition for the crop, to encourage rapid and successful root growth. All crops have different soil requirements, but there are a few common practices that could
+        encourage healthy soil biology.
+    </p>
+</div>
+
+<div class="bgimg-2">
+    <div class="caption">
+        <span class="border" style="background-color: transparent; font-size: 25px; color: #f7f7f7">About Us</span
+    >
+  </div>
+</div>
+
+<div style="position: relative">
+  <div
+    style="
+      color: #ddd;
+      background-color: #282e34;
+      text-align: center;
+      padding: 50px 80px;
+      text-align: justify;
+    "
+  >
+    <p>
+      This program is a producer-driven, decentralized competitive grants and
+      education program operating in every state and island protectorate. Our
+      outreach provides communication and technical support at the national
+      level. We provide advance agricultural innovation that promotes
+      profitability, stewardship of the land, air and water, and quality of life
+      for farmers, ranchers and their communities. Primary grant programs
+      include research and education grants, professional development grants and
+      producer grants. <br />
+      Our vision is an enduring Indian agriculture of the highest quality. This
+      agriculture is profitable, protects the nation's land and water and is a
+      force for a rewarding way of life for farmers and ranchers whose quality
+      products and operations sustain their communities and society. <br />
+      Our mission is to advance - to the whole of Indian agriculture -
+      innovations that improve profitability, stewardship and quality of life by
+      investing in groundbreaking research and education.
+    </p>
+  </div>
+</div>
+
+<div class="bgimg-3">
+  <div class="caption">
+    <span
+      class="border"
+      style="background-color: transparent; font-size: 25px; color: #f7f7f7"
+      >Our Services</span
+    >
+  </div>
+</div>
+
+<div style="position: relative">
+  <div
+    style="
+      color: #ddd;
+      background-color: #282e34;
+      text-align: center;
+      padding: 50px 80px;
+      text-align: justify;
+    "
+  >
+    <div class="photograph">
+      <div class="eachphoto">
+        {% if user.is_authenticated %}
+        <a href="{% url 'crop' %}"
+          ><img src="{% static 'images/Crops.jpg' %}" alt="Crops" /></a
+        ><br />
+        <b>Crops</b>
+      </div>
+      <div class="eachphoto">
+        <a href="{% url 'fertiliser' %}"
+          ><img
+            src="{% static 'images/Fertilisers.jpg' %}"
+            alt="Fertiliser" /></a
+        ><br />
+        <b>Fertilisers</b>
+        {% else %}
+        <a href="{% url 'user' %}"
+          ><img src="{% static 'images/Crops.jpg' %}" alt="Crops" /></a
+        ><br />
+        <b>Crops</b>
+      </div>
+      <div class="eachphoto">
+        <a href="{% url 'user' %}"
+          ><img
+            src="{% static 'images/Fertilisers.jpg' %}"
+            alt="Fertiliser" /></a
+        ><br />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border">THANKS FOR VISITING</span>
+    </div>
+</div>
+{% endblock content %}
